@@ -8,7 +8,7 @@
 </script>
 
 <nav class="bg-gray-800">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	<div class="default-width-padding">
 		<div class="flex items-center justify-between h-16">
 			<div class="flex items-center">
 				<div class="flex-shrink-0 pr-4">
@@ -17,16 +17,16 @@
 				<div class="hidden md:block">
 					<div class="flex items-center justify-between space-x-4">
 						<div>
-							<a class="navlink" href="/laser" class:selected={section === 'laser'}>laser cutter</a>
+							<a class="navlink" href="/machines/laser" class:selected={section === 'laser'}>laser cutter</a>
 						</div>
 						<div>
-							<a class="navlink" href="/plasma" class:selected={section === 'plasma'}>plasma cutter</a>
+							<a class="navlink" href="/machines/plasma" class:selected={section === 'plasma'}>plasma cutter</a>
 						</div>
 						<div>
-							<a class="navlink" href="/cnc_wood" class:selected={section === 'cnc_wood'}>cnc wood</a>
+							<a class="navlink" href="/machines/cnc_wood" class:selected={section === 'cnc_wood'}>cnc wood</a>
 						</div>
 						<div>
-							<a class="navlink" href="/cnc_plastic" class:selected={section === 'cnc_plastic'}>cnc plastic</a>
+							<a class="navlink" href="/machines/cnc_plastic" class:selected={section === 'cnc_plastic'}>cnc plastic</a>
 						</div>
 						<div>
 							<a class="navlink" href="/about" class:selected={section === 'about'}>about</a>
@@ -66,13 +66,13 @@
 		<div class:hidden={!mobileMenuIsOpen} class="md:hidden" id="mobile-menu">
 			<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 				<div>
-					<a class="navlink" href="/laser" class:selected={section === 'laser'}>laser</a>
+					<a class="navlink" href="/machines/laser" class:selected={section === 'laser'}>laser</a>
 				</div>
 				<div>
-					<a class="navlink" href="/cnc" class:selected={section === 'cnc'}>cnc</a>
+					<a class="navlink" href="/machines/cnc" class:selected={section === 'cnc'}>cnc</a>
 				</div>
 				<div>
-					<a class="navlink" href="/plasma" class:selected={section === 'plasma'}>plasma</a>
+					<a class="navlink" href="/machines/plasma" class:selected={section === 'plasma'}>plasma</a>
 				</div>
 				<div>
 					<a class="navlink" href="/about" class:selected={section === 'about'}>about</a>
