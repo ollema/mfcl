@@ -41,7 +41,6 @@ jobs:
       - uses: JonasKruckenberg/tauri-build@v1
         id: tauri_build
 
-      # The `artifacts` output can now be used by a different action to upload the artifacts
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts
@@ -52,17 +51,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Download the previously uploaded artifacts
       - uses: actions/download-artifact@v3
         id: download
         with:
           name: artifacts
           path: artifacts
-      # And create a release with the artifacts attached
+
+      - name: 'generate release tag'
+        id: tag
+        run: |
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d_%H.%M")"
+
       - name: 'create release'
         uses: softprops/action-gh-release@master
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         with:
+          tag_name: ${{ steps.tag.outputs.release_tag }}
           draft: false
           files: ./artifacts/**/*
