@@ -1,16 +1,23 @@
 import type { RequestHandler } from '@sveltejs/kit'
-import prisma from '$lib/prisma'
+import { machines } from '$lib/data/machines';
+import type { MachineType } from '$lib/types/machine.type';
+
 
 export const get: RequestHandler = async ({ params }) => {
-    const machine = await prisma.machine.findFirst({
-        where: { slug: params.slug }, include: { setupSteps: { include: { setupActions: true } } }
-    })
-    if (!machine) {
+    let currentMachine: MachineType | undefined
+
+    machines.forEach(machine => {
+        if (machine.slug === params.slug) {
+            currentMachine = machine;
+        }
+    });
+
+    if (typeof currentMachine === 'undefined') {
         return { status: 404 }
     }
 
     let currentStep: number
-    if (0 <= +params.id && +params.id < machine.setupSteps.length) {
+    if (0 <= +params.id && +params.id < currentMachine.setupTasks.length) {
         currentStep = +params.id
     } else {
         return { status: 404 }
@@ -19,6 +26,6 @@ export const get: RequestHandler = async ({ params }) => {
     return {
         headers: { 'Content-Type': 'application/json' },
         status: 200,
-        body: { machine, currentStep }
+        body: { currentMachine, currentStep }
     }
 }

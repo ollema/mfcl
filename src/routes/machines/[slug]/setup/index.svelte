@@ -1,10 +1,16 @@
 <script lang="ts">
 	import SetupNav from './_SetupNav.svelte';
-	import type { MachineType } from 'src/types/machine.type';
+	import type { MachineType } from '$lib/types/machine.type';
 
-	export let machine: MachineType;
+	export let currentMachine: MachineType;
 </script>
 
-<SetupNav {machine} />
+<SetupNav {currentMachine} />
 
-<div class="default-width-padding">hej</div>
+<div class="default-width-padding">
+	{#each currentMachine.setupTasks as setupTask}
+		<div class="">
+			{setupTask.title}
+		</div>
+	{/each}
+</div>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { MachineType } from 'src/types/machine.type';
+	import type { MachineType } from '$lib/types/machine.type';
 
-	export let machine: MachineType;
+	export let currentMachine: MachineType;
 </script>
 
 <div class="bg-gray-800">
@@ -10,15 +10,15 @@
 			<div class="flex-grow basis-0">
 				<a href="/">user: 1234567</a>
 			</div>
-			<div class="flex items-center justify-center">
+			<div class="flex items-center justify-center space-x-4">
 				<div class="flex-grow basis-0">
-					<a href="/machines/{machine.slug}/setup">setup</a>
+					<a href="/machines/{currentMachine.slug}/setup">setup</a>
 				</div>
 				<div class="flex-grow basis-0">
-					<a href="/machines/{machine.slug}/operate">operate</a>
+					<a href="/machines/{currentMachine.slug}/operate">operate</a>
 				</div>
 				<div class="flex-grow basis-0">
-					<a href="/machines/{machine.slug}/cleanup">cleanup</a>
+					<a href="/machines/{currentMachine.slug}/cleanup">cleanup</a>
 				</div>
 			</div>
 		</div>
