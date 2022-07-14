@@ -54,7 +54,7 @@
 
 			{#if currentStep >= 0}
 				<div class="flex-grow basis-0 flex items-center justify-center">
-					<div>setup progress:&nbsp;</div>
+					<div>progress:&nbsp;</div>
 					{#each currentMachine.setupSteps as step, i}
 						<div class="px-[0.15rem]">
 							<a
