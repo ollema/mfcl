@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { MachineType } from '$lib/types/machine.type';
+	import type { MachineType } from '$lib/models/machine';
 
 	export let currentMachine: MachineType;
 

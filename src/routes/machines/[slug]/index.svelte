@@ -1,6 +1,6 @@
 <script lang="ts">
 	import MachineNav from './_MachineNav.svelte';
-	import type { MachineType } from '$lib/types/machine.type';
+	import type { MachineType } from '$lib/models/machine';
 	import MachineButton from './_MachineButton.svelte';
 
 	export let currentMachine: MachineType;

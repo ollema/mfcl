@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { MachineType } from '$lib/types/machine.type';
+	import type { MachineType } from '$lib/models/machine';
 
 	export let currentMachine: MachineType;
-	export let currentStep: number = -1;
+	export let currentStep = -1;
 
 	currentStep = currentStep;
 </script>
@@ -57,10 +57,8 @@
 					<div>progress:&nbsp;</div>
 					{#each currentMachine.setupSteps as step, i}
 						<div class="px-[0.15rem]">
-							<a
-								class="text-gray-500"
-								class:text-green-500={step.done}
-								href="/machines/{currentMachine.slug}/setup/step/{i}">█</a
+							<a class="text-gray-500" class:text-green-500={step} href="/machines/{currentMachine.slug}/setup/step/{i}"
+								>█</a
 							>
 						</div>
 					{/each}

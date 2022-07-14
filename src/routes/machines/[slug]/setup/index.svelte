@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SetupNav from './_SetupNav.svelte';
-	import type { MachineType } from '$lib/types/machine.type';
+	import type { MachineType } from '$lib/models/machine';
 	import SetupStep from './_SetupStep.svelte';
 
 	export let currentMachine: MachineType;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SetupStepTasks } from '$lib/types/machine.type';
+	import type { SetupStepTasks } from '$lib/models/machine';
 
 	export let setupStepTask: SetupStepTasks;
 	export let i: number;
