@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+@layer base {
+  html {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    @apply h-full bg-gray-300
+  }
 }
 
 @layer components {
-    .default-width-padding {
-      @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-    }
+  .default-width-padding {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
