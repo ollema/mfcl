@@ -50,7 +50,7 @@
 <nav class="bg-gray-600 text-white mb-4">
 	<div class="default-width-padding">
 		<div class="flex items-center justify-between h-10">
-			<div class="flex-grow basis-0 flex justify-start"><a href="/">user: name surname / 1234678</a></div>
+			<div class="flex-grow basis-0 flex justify-start"><a href="/users">user: name surname / 1234678</a></div>
 
 			{#if currentStep >= 0}
 				<div class="flex-grow basis-0 flex items-center justify-center">

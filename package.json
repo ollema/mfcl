@@ -38,7 +38,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prisma/client": "^4.0.0",
 		"@tauri-apps/api": "^1.0.2",
 		"tauri-plugin-sql-api": "github:tauri-apps/tauri-plugin-sql"
 	},

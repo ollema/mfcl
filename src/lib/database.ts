@@ -9,3 +9,10 @@ export async function getAllUsers(): Promise<UserType[]> {
     `;
 	return await db.select(query);
 }
+
+export async function createUser(name: string) {
+	const query = `--sql
+        INSERT INTO users (name) VALUES ($1)
+    `;
+	await db.execute(query, [name]);
+}
