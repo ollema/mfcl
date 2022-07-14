@@ -17,7 +17,7 @@ export const get: RequestHandler = async ({ params }) => {
     }
 
     let currentStep: number
-    if (0 <= +params.id && +params.id < currentMachine.setupTasks.length) {
+    if (0 <= +params.id && +params.id < currentMachine.setupSteps.length) {
         currentStep = +params.id
     } else {
         return { status: 404 }

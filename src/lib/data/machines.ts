@@ -5,7 +5,7 @@ export const machines: MachineType[] = [{
     slug: "laser",
     title: "Laser cutter",
 
-    setupTasks: [
+    setupSteps: [
         {
             id: "0",
             title: "First setup task",
@@ -13,7 +13,7 @@ export const machines: MachineType[] = [{
             done: false,
             desc: "First setup task for this machine",
 
-            setupTaskSteps: [
+            setupStepTasks: [
                 {
                     id: "0",
                     title: "First setup task step for the first task",
@@ -51,7 +51,7 @@ export const machines: MachineType[] = [{
             done: false,
             desc: "Second setup task for this machine",
 
-            setupTaskSteps: [
+            setupStepTasks: [
                 {
                     id: "4",
                     title: "First setup task step for the second task",
@@ -89,7 +89,7 @@ export const machines: MachineType[] = [{
             done: false,
             desc: "Third setup task for this machine",
 
-            setupTaskSteps: [
+            setupStepTasks: [
                 {
                     id: "8",
                     title: "First setup task step for the third task",
@@ -127,7 +127,7 @@ export const machines: MachineType[] = [{
             done: false,
             desc: "Fourth setup task for this machine",
 
-            setupTaskSteps: [
+            setupStepTasks: [
                 {
                     id: "12",
                     title: "First setup task step for the fourth task",
@@ -158,7 +158,7 @@ export const machines: MachineType[] = [{
             done: false,
             desc: "Fifth setup task for this machine",
 
-            setupTaskSteps: [
+            setupStepTasks: [
                 {
                     id: "15",
                     title: "First setup task step for the fifth task",
@@ -196,7 +196,7 @@ export const machines: MachineType[] = [{
             done: false,
             desc: "Sixth setup task for this machine",
 
-            setupTaskSteps: [
+            setupStepTasks: [
                 {
                     id: "19",
                     title: "First setup task step for the sixth task",

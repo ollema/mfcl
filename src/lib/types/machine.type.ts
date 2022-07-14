@@ -1,4 +1,4 @@
-export type SetupTaskStep = {
+export type SetupStepTasks = {
     id: string,
     title: string,
     order: number,
@@ -6,14 +6,14 @@ export type SetupTaskStep = {
     desc: string | null,
 }
 
-export type SetupTask = {
+export type SetupStep = {
     id: string,
     title: string,
     order: number,
     done: boolean,
     desc: string | null,
 
-    setupTaskSteps: SetupTaskStep[],
+    setupStepTasks: SetupStepTasks[],
 }
 
 export type MachineType = {
@@ -21,5 +21,5 @@ export type MachineType = {
     slug: string,
     title: string,
 
-    setupTasks: SetupTask[],
+    setupSteps: SetupStep[],
 }
