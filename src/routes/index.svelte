@@ -1,1 +1,11 @@
-<h1 class="text-3xl font-bold underline">Mikrofabriken Checklists</h1>
+<script lang="ts">
+	import Nav from './_Nav.svelte';
+</script>
+
+<Nav />
+
+<div class="default-width-padding">
+	<div class="flex justify-center">
+		<h1 class="font-medium text-xl">mikrofabriken checklists</h1>
+	</div>
+</div>

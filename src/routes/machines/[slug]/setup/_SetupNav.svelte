@@ -4,21 +4,59 @@
 	export let currentMachine: MachineType;
 	export let currentStep: number = -1;
 
-	currentMachine = currentMachine;
 	currentStep = currentStep;
 </script>
 
-<div class="bg-gray-800">
+<nav class="bg-gray-800 text-white">
 	<div class="default-width-padding">
-		<div class="flex items-center justify-center h-8 text-white">
-			<div class="flex-grow basis-0">
-				<a href="/machines/laser">user: 1234567</a>
-			</div>
+		<div class="flex items-center justify-between h-10">
 			{#if currentStep >= 0}
-				<div class="flex justify-center flex-grow basis-0">
-					<div>progress:&nbsp;</div>
+				<div class="flex-grow basis-0 flex justify-start">
+					<a href="/machines/{currentMachine.slug}/setup">back to setup overview</a>
+				</div>
+
+				<div class="flex-grow basis-0 flex justify-center">
+					{currentMachine.title.toLowerCase()} setup - {currentMachine.setupTasks[currentStep].title.toLowerCase()}
+				</div>
+
+				{#if currentStep < currentMachine.setupTasks.length - 1}
+					<div class="flex-grow basis-0 flex justify-end">
+						<a class="text-white justify-center" href="/machines/{currentMachine.slug}/setup/step/{currentStep + 1}"
+							>skip this step</a
+						>
+					</div>
+				{:else}
+					<div class="flex-grow basis-0 flex justify-end">
+						<a class="text-white justify-center" href="/machines/{currentMachine.slug}/operate">finish setup</a>
+					</div>
+				{/if}
+			{:else}
+				<div class="flex-grow basis-0 flex justify-start">
+					<a href="/machines/{currentMachine.slug}">back to machine overview</a>
+				</div>
+
+				<div class="flex-grow basis-0 flex justify-center">
+					{currentMachine.title.toLowerCase()} setup
+				</div>
+
+				<div class="flex-grow basis-0 flex justify-end">
+					<a class="text-white justify-center" href="/machines/{currentMachine.slug}/setup/step/0">start</a>
+				</div>
+			{/if}
+		</div>
+	</div>
+</nav>
+
+<nav class="bg-gray-600 text-white mb-4">
+	<div class="default-width-padding">
+		<div class="flex items-center justify-between h-10">
+			<div class="flex-grow basis-0 flex justify-start"><a href="/">user: name surname / 1234678</a></div>
+
+			{#if currentStep >= 0}
+				<div class="flex-grow basis-0 flex items-center justify-center">
+					<div>setup progress:&nbsp;</div>
 					{#each currentMachine.setupTasks as step, i}
-						<div class="px-0.5">
+						<div class="px-[0.15rem]">
 							<a
 								class="text-gray-500"
 								class:text-green-500={step.done}
@@ -26,23 +64,12 @@
 							>
 						</div>
 					{/each}
+					<div>&nbsp;{currentStep + 1}/{currentMachine.setupTasks.length}</div>
 				</div>
-				{#if currentStep < currentMachine.setupTasks.length - 1}
-					<div class="flex-grow basis-0 text-end">
-						<a class="text-white justify-center" href="/machines/{currentMachine.slug}/setup/step/{currentStep + 1}"
-							>skip step</a
-						>
-					</div>
-				{:else}
-					<div class="flex-grow basis-0 text-end">
-						<a class="text-white justify-center" href="/machines/{currentMachine.slug}/operate">finish setup</a>
-					</div>
-				{/if}
-			{:else}
-				<div class="flex-grow basis-0 text-end">
-					<a class="text-white justify-center" href="/machines/{currentMachine.slug}/setup/step/0">start</a>
+				<div class="flex-grow basis-0 flex justify-end">
+					<a class="text-white justify-center" href="/machines/{currentMachine.slug}/setup/reset">reset all steps</a>
 				</div>
 			{/if}
 		</div>
 	</div>
-</div>
+</nav>
